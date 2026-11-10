@@ -1,0 +1,16 @@
+# Executable files
+apps/buggy_app
+apps/buggy_app_dbg
+apps/buggy_app_host
+apps/cpu_test
+
+# Profiling binary data
+logs/*.data
+
+# Generated archives
+output/*.cpio.gz
+
+# Temporary files
+*.o
+*.swp
+*~

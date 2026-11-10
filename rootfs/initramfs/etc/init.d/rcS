@@ -1,0 +1,18 @@
+#!/bin/sh
+mount -t proc none /proc
+mount -t sysfs none /sys
+mount -t tmpfs none /tmp
+hostname embedded-lab
+
+echo "[ LAB-02 ] Starting system initialization..."
+echo "[ LAB-02 ] Loading lab2_driver module..."
+
+insmod /lib/modules/5.15.0/lab2_driver.ko
+if [ $? -eq 0 ]; then
+    echo "[ LAB-02 ] lab2_driver loaded OK"
+    mknod /dev/lab2 c 240 0 2>/dev/null
+    echo "[ LAB-02 ] /dev/lab2 created (major=240, minor=0)"
+else
+    echo "[ LAB-02 ] ERROR: Failed to load lab2_driver!"
+fi
+echo "[ LAB-02 ] System initialization complete!"

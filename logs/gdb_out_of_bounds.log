@@ -1,0 +1,6 @@
+#0  process_data (data=0x407ffdd0, len=5) at buggy_app.c:9
+#1  0x00400774 in main (argc=1, argv=0x407fff74) at buggy_app.c:33
+$5 = 5
+$6 = 5
+$7 = {10, 20, 30, 40, 50}
+$8 = 150

@@ -1,0 +1,13 @@
+18	    free(buf);
+19	    return buf; /* Bug: tra ve pointer da bi free */
+20	}
+21	
+22	/* Bug 3: Integer overflow */
+23	int calculate(int a, int b) {
+24	    int result = a * b;
+25	    printf("calculate(%d, %d) = %d\n", a, b, result);
+26	    return result;
+27	}
+$17 = 100000
+$18 = 100000
+$19 = 10000000000

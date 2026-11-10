@@ -1,0 +1,13 @@
+10	    }
+11	    printf("Sum = %d\n", sum);
+12	}
+13	
+14	/* Bug 2: Use after free */
+15	char *create_message(const char *text) {
+16	    char *buf = malloc(strlen(text) + 1);
+17	    strcpy(buf, text);
+18	    free(buf);
+19	    return buf; /* Bug: tra ve pointer da bi free */
+#0  create_message (text=0x400940 "Hello Embedded Linux") at buggy_app.c:19
+#1  0x00400788 in main (argc=1, argv=0x407fff74) at buggy_app.c:36
+$14 = 0x421410
